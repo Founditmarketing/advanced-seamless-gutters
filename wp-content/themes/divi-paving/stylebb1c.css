@@ -1,0 +1,1684 @@
+/*
+ Theme Name:   Divi Paving
+ Description:  Premium Divi Child Theme for Paving, Asphalt, Sealcoating, Blacktop, Construction, and Industrial Contractors
+ Author:       Pee-Aye Creative
+ Author URI:   http://peeayecreative.com
+ Template:     Divi
+ Version:      2.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+/*MISCELLANEOUS STYING
+-----------------------------------------------------------------------*/
+
+/*blurb icon border padding and border radius*/
+
+.et_pb_blurb .et-pb-icon {
+   padding: 16px;
+   border-radius: 0px;
+   border-width: 2px;
+}
+
+
+/*add border under links*/
+
+.pa-underline-link a {
+   border-bottom: 2px solid #ffffff;
+}
+
+
+/*change color of links on hover*/
+
+.pa-underline-link:hover a {
+   color: #ffffff;
+}
+
+
+/*vertical aling content in columns*/
+
+.pa-vertical-align {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+
+/*place buttons next to each other in the same column*/
+
+.pa-button-inline .et_pb_button_module_wrapper {
+   display: inline-block;
+}
+
+
+/*make modules side by side on module in same column on phone*/
+
+@media only screen and ( max-width: 479px) {
+   .pa-mobile-column-50 {
+      display: inline-block;
+      max-width: 50%;
+   }
+}
+
+
+/*adds background color overlay to parallax sections*/
+
+.pa-overlay .et_parallax_bg:before,
+.pa-overlay:before {
+   content: "";
+   display: block;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: rgba(0,0,0,0.57);
+}
+
+
+/*make module wobble up and down on hover*/
+
+.pa-blurb-vertical-wobble:hover {
+   animation-name: pa-vertical-wobble;
+   animation-duration: 1.5s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
+}
+
+@keyframes pa-vertical-wobble {
+   16.65% {
+      transform: translateY(4px);
+   }
+   33.3% {
+      transform: translateY(-3px);
+   }
+   49.95% {
+      transform: translateY(2px);
+   }
+   66.6% {
+      transform: translateY(-1px);
+   }
+   83.25% {
+      transform: translateY(1px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+/*open footer menu and remove hamburger icon*/
+@media (max-width: 980px) {
+.pa-footer-menu .et_pb_menu__menu {
+    display: flex;
+  }
+.pa-footer-menu .et_mobile_nav_menu {
+    display: none;
+}
+}
+
+
+/*fixes a Divi bug causing the mobile layout to slide left*/
+@media (max-width: 767px){
+.et_pb_menu__wrap {
+    margin: 0 !important;
+}
+}
+
+
+/*make the mobile menu wider*/
+.et_mobile_menu {
+width: 100%;
+}
+
+/*change Divi hamburger menu to X*/
+.mobile_nav.opened .mobile_menu_bar:before {
+    content: '\4d';
+}
+
+/*remove the border from the top of the mobile menu*/
+.et_mobile_menu {
+	border-top: none;
+}
+
+/*hide the submenu items on mobile*/
+.et_mobile_menu li ul.hide {
+display: none !important;
+}
+
+/*adjust the parent menu items on mobile*/
+.et_mobile_menu .menu-item-has-children {
+position: relative;
+}
+
+/*adjust the parent menu items on mobile*/
+.et_mobile_menu .menu-item-has-children > a {
+background: transparent;
+}
+
+/*position and style the submenu icons*/
+.et_mobile_menu .menu-item-has-children > a + span {
+position: absolute;
+right: 0;
+top: 0;
+padding: 10px 20px;
+font-weight: bold;
+cursor: pointer;
+}
+
+/*icon for closed submenu*/
+span.menu-closed:before {
+content: "\33";
+display: block;
+color: #db0000;
+font-size: 18px;
+font-family: ETmodules;
+}
+
+/*icon for open submenu*/
+span.menu-closed.menu-open:before {
+content: "\4d";
+	color: #db0000;
+}
+
+/*adjust border under mobile menu items*/
+.et_mobile_menu li:not(:last-child) a {
+    border-bottom: 2px solid #f3f6fd;
+}
+/*remove border under last mobile menu item*/
+.et_mobile_menu li:last-child a {
+    border-bottom: none;
+}
+
+
+
+/*IMAGE SIZE
+-----------------------------------------------------------------------*/
+
+
+/*force image to landscape image aspect ratio*/
+
+.pa-image-aspect-ratio-landscape .et_pb_image_wrap {
+   padding-top: 56.25%;
+   display: block;
+}
+
+
+/*force image to landscape image aspect ratio*/
+
+.pa-image-aspect-ratio-landscape .et_pb_image_wrap img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   object-fit: cover;
+}
+
+
+/*force image to square image aspect ratio*/
+
+.pa-image-1-1 .et_pb_image_wrap {
+   padding-top: 100%;
+   display: block;
+}
+
+
+/*force image to square image aspect ratio*/
+
+.pa-image-1-1 .et_pb_image_wrap img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   object-fit: cover;
+}
+
+
+/*SERVICES BLURBS
+-----------------------------------------------------------------------*/
+
+
+/*style learn more link*/
+
+.pa-service-blurb a {
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: #bbbbbb;
+   border-bottom: 2px solid #bbbbbb;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*learn more link on hover*/
+
+.pa-service-blurb .et_pb_blurb_container:hover a {
+   color: #db0000;
+   border-bottom: 2px solid #db0000;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*add spacing to text area*/
+
+.pa-service-blurb .et_pb_blurb_container {
+   background: #ffffff;
+   padding: 20px;
+}
+
+
+/*prepare image for zoom effect*/
+
+.pa-column-image {
+   overflow: hidden;
+}
+
+
+/*add image image zoom to services images*/
+
+.pa-column-image img {
+   transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -webkit-transition: all 0.5s;
+}
+
+
+/*add image image zoom to services images*/
+
+.pa-column-image:hover img {
+   transform: scale(1.1);
+   -moz-transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+}
+
+
+/*CLIENT BLURBS
+--------------------------------------------------------------------------*/
+
+
+/*prepare blur images for smooth rotation*/
+
+.pa-clients-blurb .et_pb_main_blurb_image {
+   transition-duration: 0.3s;
+   transition-property: transform;
+   transition-timing-function: ease-out;
+}
+
+
+/*rotate images on hover*/
+
+.pa-clients-blurb:hover .et_pb_main_blurb_image {
+   transform: rotate(10deg);
+}
+
+
+/*VALUES BLURBS
+--------------------------------------------------------------------------*/
+
+
+/*prepare images to move smoothly*/
+
+.pa-values-blurb h4,
+.pa-values-blurb img {
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*move images up on hover*/
+
+.pa-values-blurb:hover h4,
+.pa-values-blurb:hover img {
+   transform: translateY(-4px);
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*adjust position of blurb image*/
+
+.pa-values-blurb img {
+   margin-bottom: -8px;
+}
+
+
+/*SLIDING SUBHEAD
+----------------------------------------------------------------*/
+
+
+/*add the subhead line to the left*/
+
+.pa-subhead-left:before {
+   content: '';
+   display: block;
+   position: absolute;
+   top: 30%;
+   left: 0px;
+   width: 50px;
+   border-bottom: 2px solid #db0000;
+   transition: all 0.5s ease-in-out;
+}
+
+
+/*position the subhead line*/
+
+.pa-subhead-left {
+   padding-left: 70px!important;
+   margin-bottom: 10px!important;
+   position: relative;
+   transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 980px) {
+   /*make the subhead line wider on hover on desktop*/
+   .pa-hover-section:hover .pa-subhead-left:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 0px;
+      width: 100px;
+      border-bottom: 2px solid #db0000;
+      transition: all 0.5s ease-in-out;
+   }
+   /*set the width of subhead line on hover on desktop*/
+   .pa-hover-section:hover .pa-subhead-left {
+      padding-left: 120px!important;
+      margin-bottom: 10px!important;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+   }
+}
+
+
+/*GALLERY
+----------------------------------------------------------------*/
+
+
+/*change the gallery images to be 4-3 aspect ratio no matter what*/
+
+.pa-hover-gallery .et_pb_gallery_grid .et_pb_gallery_image {
+   padding-top: 75%;
+   display: block;
+}
+
+
+/*change the gallery images to be 4-3 aspect ratio no matter what*/
+
+.pa-hover-gallery .et_pb_gallery_image.landscape img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   object-fit: cover;
+}
+
+
+/*position the gallery items*/
+
+.pa-hover-gallery .et_pb_gallery_item {
+   position: relative;
+}
+
+
+/*remove the default top margin from the title*/
+
+.pa-hover-gallery .et_pb_gallery_title {
+   margin: 0 !important;
+}
+
+
+/*set the overlay z-index*/
+
+.pa-hover-gallery .et_overlay {
+   z-index: 1;
+}
+
+
+/*position and style the title and caption text container*/
+
+.pa-hover-gallery .pa-gallery-text {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background: rgba(3, 15, 39, 0.8);
+   opacity: 0;
+   transition: all .5s ease-in-out;
+}
+
+
+/*show the title and caption on hover*/
+
+.pa-hover-gallery .et_pb_gallery_item:hover .pa-gallery-text {
+   opacity: 1;
+}
+
+@media (max-width: 980px) {
+   /*remove some floats on desktop*/
+   .pa-hover-gallery .et_pb_gallery_items .et_pb_grid_item:nth-child(2n+1) {
+      clear: none !important;
+   }
+}
+
+@media (max-width: 980px) {
+   /*set image width on desktop*/
+   .pa-hover-gallery .et_pb_gallery_items .et_pb_grid_item:nth-child(n) {
+      width: 50% !important;
+      margin: 0 !important;
+   }
+}
+
+@media (max-width: 767px) {
+   /*hide caption text on tablet and phone*/
+   .pa-hover-gallery .et_pb_gallery_caption {
+      display: none;
+   }
+}
+
+
+/*set width of image*/
+
+.pa-hover-gallery .et_pb_gallery_image.landscape img {
+   width: 100%;
+}
+
+
+/*set odd images to float left*/
+
+.pa-hover-gallery .et_pb_gallery_item:nth-child(n+1):nth-child(odd) {
+   float: left;
+}
+
+
+/*set even images to float left*/
+
+.pa-hover-gallery .et_pb_gallery_item:nth-child(n+1):nth-child(even) {
+   float: right;
+}
+
+
+/*set width of specific images*/
+
+.pa-hover-gallery .et_pb_gallery_item:nth-child(5n+1) {
+   width: 50%!important;
+}
+
+
+/*specify that the images clear their floats*/
+
+.pa-hover-gallery .et_pb_gallery_item {
+   clear: inherit!important;
+}
+
+
+/*set the border frame of images to hide overflow*/
+
+.pa-hover-gallery .et_pb_gallery_grid .et_pb_gallery_image {
+   overflow: hidden;
+   position: relative;
+}
+
+
+/*add padding to each image*/
+
+.pa-hover-gallery .et_pb_gallery_grid .et_pb_gallery_items .et_pb_gallery_item.et_pb_grid_item {
+   padding: .5%;
+}
+
+
+/*added this to make the gallery images open in lightbox*/
+
+.pa-hover-gallery .et_overlay {
+   pointer-events: all !important;
+}
+
+
+/*SPEECH BUBBLE TESTIMONIALS
+-----------------------------------------------------------------------*/
+
+
+/* all the testimonial */
+
+.pa-speech-bubble .et_pb_testimonial_description_inner {
+   background-color: #111111;
+   /*adjust the background color*/
+   border-radius: 0px;
+   padding: 30px;
+   margin-top: 42px;
+   transition: all .3s ease-out;
+   box-shadow: 0px 2px 80px 0px rgba(160, 190, 212, 0.22);
+}
+
+
+/* this is the arrow point */
+
+.pa-speech-bubble .et_pb_testimonial_description_inner:after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 50%;
+   width: 0;
+   height: 0;
+   border: 20px solid transparent;
+   border-bottom-color: #111111;
+   /*adjust the point arrow background color*/
+   border-top: 0;
+   margin-left: -20px;
+   margin-top: -20px;
+}
+
+
+/*box shadow on point*/
+
+.pa-speech-bubble:hover .et_pb_testimonial_description_inner:after {
+   box-shadow: 0px 2px 80px 0px rgba(160, 190, 212, 0.22);
+}
+
+
+/*box shadow on text area and move up on hover*/
+
+.pa-speech-bubble:hover .et_pb_testimonial_description_inner {
+   transform: translateY(-4px);
+   box-shadow: 0px 2px 80px 0px rgba(160, 190, 212, 0.22);
+}
+
+
+/*remove the default quotation mark icon*/
+
+.pa-speech-bubble:before {
+   display: none;
+}
+
+
+/*reduce some margin below the star graphic */
+
+.pa-speech-bubble .et_pb_testimonial .et_pb_testimonial_description_inner>div p:last-of-type:not(:only-of-type) {
+   margin-bottom: -20px;
+}
+
+
+/*create an up and down wobble motion on the portrait */
+
+.pa-speech-bubble:hover .et_pb_testimonial_portrait {
+   animation-name: pa-speech-bubble-wobble;
+   animation-duration: 1.5s;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: 1;
+}
+
+@keyframes pa-speech-bubble-wobble {
+   16.65% {
+      transform: translateY(4px);
+   }
+   33.3% {
+      transform: translateY(-3px);
+   }
+   49.95% {
+      transform: translateY(2px);
+   }
+   66.6% {
+      transform: translateY(-1px);
+   }
+   83.25% {
+      transform: translateY(1px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+@media (max-width: 980px) and (min-width: 768px) {
+   /*fix the positon on tablet*/
+   .et_pb_column .et_pb_testimonial_description {
+      display: inline;
+   }
+   /*fix the position on tablet*/
+   .pa-speech-bubble .et_pb_testimonial_description_inner {
+      margin-top: 130px!important;
+   }
+   /*fix the position on tablet*/
+   .pa-speech-bubble .et_pb_testimonial_portrait {
+      left: 43%;
+   }
+}
+
+
+/*GALLERY LIGHTBOX STYLING
+----------------------------------------------------------------*/
+
+
+/*close button color, padding, etc*/
+
+button.mfp-close {
+   color: #db0000 !important;
+   font-weight: 900 !important;
+   padding-top: 24px;
+   padding-right: 24px !important;
+}
+
+
+/*title text styling*/
+
+.mfp-title {
+   color: #000;
+   font-weight: 700;
+   background: rgba(0, 0, 0, 0.5);
+   padding-left: 20px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   margin-top: -24px;
+   margin-left: 2px;
+   margin-right: 2px;
+   font-size: 20px;
+}
+
+
+/*number of photos text styling*/
+
+.mfp-counter {
+   color: #000;
+   font-weight: 900;
+   padding-right: 20px;
+   font-size: 16px;
+}
+
+
+/*border around image*/
+
+img.mfp-img {
+   padding: 0;
+   border: 2px solid #db0000;
+}
+
+
+/*size of the previous and next arrows*/
+
+.mfp-arrow:after {
+   color: #db0000;
+   font-size: 60px !important;
+}
+
+
+/*background color*/
+
+.mfp-bg {
+   background-color: #000 !important;
+}
+
+
+/*color of text and arrows*/
+
+.mfp-close,
+.mfp-title,
+.mfp-counter,
+.mfp-arrow:after {
+   color: #FFF !important;
+}
+
+
+/*previous arrow icon*/
+
+.mfp-arrow-left:after {
+   content: "23"!important;
+}
+
+
+/*position of previous arrow*/
+
+.mfp-arrow-left {
+   left: 50px!important;
+}
+
+
+/*next arrow icon*/
+
+.mfp-arrow-right:after {
+   content: "24"!important;
+}
+
+
+/*position of next arrow*/
+
+.mfp-arrow-right {
+   right: 50px;
+}
+
+
+/*BLOG FEED
+-----------------------------------------------------------------------*/
+
+
+/*style the read more link*/
+
+.pa-blog-feed a.more-link {
+   font-size: 16px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   color: #bbbbbb;
+   border-bottom: 2px solid #bbbbbb;
+   margin-top: 20px;
+   float: none;
+   display: inline-block;
+   transition: all 0.4s ease-in-out;
+   background: #ffffff;
+   margin: 20px 40px;
+}
+
+
+/*read more link on hover*/
+
+.pa-blog-feed .et_pb_post:hover a.more-link {
+   color: #db0000;
+   border-bottom: 2px solid #db0000;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*image transition and position*/
+
+.pa-blog-feed .et_pb_post img {
+   transition: all 0.5s;
+   z-index: 1!important;
+   display: block;
+}
+
+
+/*image zoom on hover*/
+
+.pa-blog-feed .et_pb_post:hover img {
+   transform: scale(1.1);
+}
+
+
+/*image container size, position, etc*/
+
+.pa-blog-feed a.entry-featured-image-url {
+   overflow: hidden;
+   position: relative;
+   left: 40px;
+   right: 40px;
+   min-width: 110%;
+   margin-left: -40px;
+   margin-bottom: -50px;
+   display: inline-block;
+}
+
+
+/*image spacing*/
+
+.pa-blog-feed .et_pb_image_container {
+   z-index: 1!important;
+   margin: -20px 20px 0px -20px;
+}
+
+
+/*title spacing, background, etc*/
+
+.pa-blog-feed .et_pb_post h2 {
+   z-index: 99;
+   position: relative;
+   background: #ffffff;
+   padding: 20px 20px 0px 20px;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+
+/*meta spacing, background, etc*/
+
+.pa-blog-feed .et_pb_post .post-meta {
+   z-index: 99;
+   background: #db0000;
+   position: relative;
+   padding: 5px 20px 2px 20px;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+
+/*post meta on hover*/
+
+.pa-blog-feed .et_pb_post .post-meta a:hover {
+   color: #111111!important;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*excerpt text spacing*/
+
+.pa-blog-feed .et_pb_post p {
+   z-index: 99;
+   position: relative;
+   background: #ffffff;
+   padding: 10px 20px 0px 20px;
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+@media all and (max-width: 980px) {
+   /*meta text margin on tablet and phone*/
+   .pa-blog-feed .et_pb_post .post-meta {
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   /*title text on tablet and phone*/
+   .pa-blog-feed .et_pb_post h2 {
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   /*excerpt text on tablet and phone*/
+   .pa-blog-feed .et_pb_post p {
+      margin-left: 0px;
+      margin-right: 0px;
+   }
+   /*read more link on tablet and phone*/
+   .pa-blog-feed a.more-link {
+      margin-left: 20px;
+      margin-right: 20px;
+   }
+}
+
+
+/*PORTFOLIO
+-----------------------------------------------------------------------*/
+
+
+/*portfolio filter border*/
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a {
+   border: 2px solid #db0000;
+}
+
+
+/*active portfolio filter tab*/
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active {
+   background: #db0000;
+   color: #ffffff;
+}
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul,
+.et_pb_gallery .et_pb_gallery_pagination ul {
+   text-align: center;
+}
+
+
+/*style the pagination links*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a,
+.et_pb_gallery .et_pb_gallery_pagination ul li a {
+   padding: 1em 1.5em;
+   background: #db0000;
+   border: 2px solid #db0000;
+   color: #ffffff;
+}
+
+
+/*style the pagination links on hover*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a:hover,
+.et_pb_gallery .et_pb_gallery_pagination ul li a.hover {
+   border-color: #db0000;
+   background: #db0000;
+}
+
+
+/*style the active pagination link*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,
+.et_pb_gallery .et_pb_gallery_pagination ul li a.active {
+   background: #111111;
+   color: #ffffff;
+   border-color: #111111;
+}
+
+
+/*CONTACT SPEECH BUBBLE
+-----------------------------------------------------------------------*/
+
+
+/*text area background color and spacing*/
+
+.pa-contact-speech-bubble .et_pb_blurb_container {
+   position: relative;
+   background: #444444;
+   padding: 30px;
+}
+
+
+/*align the image to the middle vertically*/
+
+.pa-contact-speech-bubble .et_pb_main_blurb_image {
+   vertical-align: middle;
+}
+
+
+/*point arrow on the left*/
+
+.pa-contact-speech-bubble .et_pb_blurb_description:after {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 50%;
+   width: 0;
+   height: 0;
+   border: 20px solid transparent;
+   border-right-color: #444444;
+   border-left: 0;
+   margin-top: -20px;
+   margin-left: -20px;
+}
+
+
+/*FAQ ACCORDION STYLING
+---------------------------------------------------------------*/
+
+
+/*replace the icon when closed*/
+
+.pa-accordion .et_pb_toggle_title:before {
+   font-size: 30px !important;
+   content: "\4c" !important;
+   color: #db0000;
+   font-weight: 700;
+   transition: 0.3s;
+}
+
+
+/*replace the icon when opened and roate it*/
+
+.pa-accordion .et_pb_toggle_open .et_pb_toggle_title:before {
+   display: block !important;
+   content: "\4b"!important;
+   font-weight: 700;
+   transform: rotate(180deg);
+}
+
+
+/*change border and background of open toggle*/
+
+.pa-accordion .et_pb_toggle_open {
+   background-color: #ffffff !important;
+   border-color: #db0000!important;
+   transition: 0.4s;
+}
+
+
+/*make open close transition spooth*/
+
+.pa-accordion .et_pb_toggle {
+   transition: 0.4s;
+}
+
+
+/*BLURB ALIGNED RIGHT
+-----------------------------------------------------------------------*/
+
+
+/*reverse the blurb on desktop with icon on the right*/
+
+@media (min-width: 980px) {
+   .pa-reverse-blurb .et_pb_blurb_content {
+      display: flex;
+      flex-direction: row-reverse;
+   }
+   /*align title to the right on desktop*/
+   .pa-reverse-blurb h4 {
+      text-align: right;
+   }
+   /*align the body to the right on desktop*/
+   .pa-reverse-blurb p {
+      text-align: right;
+   }
+}
+
+
+/*SINGLE FIELD OPTIN MODULE
+-----------------------------------------------------------------------*/
+
+
+/*apply necessary flex to optin module*/
+
+.pa-footer-optin .et_pb_newsletter_footer {
+   flex-basis: 100%;
+   margin-top: 0;
+}
+
+
+/*width of email field*/
+
+.pa-footer-optin .et_pb_newsletter_field {
+   flex-basis: 73%;
+}
+
+
+/*width of button*/
+
+.pa-footer-optin .et_pb_newsletter_button_wrap {
+   flex-basis: 25%;
+}
+
+
+/*make fields inline instead of wrapping*/
+
+.et_pb_newsletter .et_pb_newsletter_fields {
+   flex-wrap: nowrap;
+}
+
+
+/*CHANGE FOOTER BULLETS TO ARROWS
+-----------------------------------------------------------------------*/
+
+
+/*replace bullet icon with arrow*/
+
+.pa-footer-bullet ul li:before {
+   font-family: 'ETMODULES';
+   content: '\24';
+   text-align: center;
+   vertical-align: middle;
+   margin-right: 10px;
+   margin-left: -14px;
+   color: #db0000 !important;
+   font-size: 1.3em;
+   transition: all .3s ease;
+}
+
+
+/*change arrow color and size on hover*/
+
+.pa-footer-bullet ul li:hover:before {
+   margin-left: -7px;
+   color: #444444 !important;
+   transition: all .3s ease;
+}
+
+
+/*RECENT PROJECTS IN BLOG SIDEBAR
+-----------------------------------------------------------------------*/
+
+
+/*move image to left and size it*/
+
+.pa-sidebar-projects .et_pb_post .entry-featured-image-url {
+   width: 96px;
+   height: 96px;
+   overflow: hidden;
+   float: left;
+   background-size: cover;
+   margin-right: 20px;
+}
+
+
+/*make image fill full square*/
+
+.pa-sidebar-projects .et_pb_post a img {
+   max-width: 100%;
+   vertical-align: middle;
+   width: 100%;
+   height: 100%;
+}
+
+
+/*remove space below project*/
+
+.pa-sidebar-projects .et_pb_post {
+    margin-bottom: 0px;
+}
+
+
+/*123
+-----------------------------------------------------------------------*/
+
+
+/*size and border*/
+
+.pa-number-one {
+   border: 2px solid #db0000;
+   display: block;
+   width: 66px;
+   height: 66px;
+   transition: all 0.8s ease-in-out;
+}
+
+
+/*add number and position it inside box*/
+
+.pa-number-one:after {
+   content: '1';
+   position: absolute;
+   left: 10px;
+   top: 8px;
+}
+
+
+/*box border on hover*/
+
+.pa-number-column-one:hover .pa-number-one {
+   border: 2px solid #dddddd;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*size and border*/
+
+.pa-number-two {
+   border: 2px solid #db0000;
+   display: block;
+   width: 66px;
+   height: 66px;
+   transition: all 0.8s ease-in-out;
+}
+
+
+/*add number and position it inside box*/
+
+.pa-number-two:after {
+   content: '2';
+   position: absolute;
+   left: 10px;
+   top: 8px;
+}
+
+
+/*box border on hover*/
+
+.pa-number-column-two:hover .pa-number-two {
+   border: 2px solid #dddddd;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*move 1 and 2 over on tablet and mobile*/
+
+@media only screen and ( max-width: 980px) {
+   .pa-number-one:after {
+      left: 40px;
+   }
+   .pa-number-two:after {
+      left: 40px!important;
+   }
+}
+
+
+/*size and border*/
+
+.pa-number-three {
+   border: 2px solid #db0000;
+   display: block;
+   width: 66px;
+   height: 66px;
+   transition: all 0.8s ease-in-out;
+}
+
+
+/*add number and position it inside box*/
+
+.pa-number-three:after {
+   content: '3';
+   position: absolute;
+   left: 10px;
+   top: 8px;
+}
+
+
+/*box border on hover*/
+
+.pa-number-column-three:hover .pa-number-three {
+   border: 2px solid #dddddd;
+   transition: all 0.4s ease-in-out;
+}
+
+
+/*sliding border color*/
+
+.pa-number-column-one:hover .pa-number-one-border {
+   position: relative;
+}
+
+.pa-number-column-one .pa-number-one-border:after {
+   content: '';
+   display: block;
+   padding-bottom: 30px;
+   border-bottom: 2px solid #111111;
+   width: 0;
+   position: absolute;
+   left: 0;
+   transition: 1s ease;
+}
+
+.pa-number-column-one:hover .pa-number-one-border:after {
+   width: 100%;
+}
+
+
+/*sliding border color*/
+
+.pa-number-column-two:hover .pa-number-two-border {
+   position: relative;
+}
+
+.pa-number-column-two .pa-number-two-border:after {
+   content: '';
+   display: block;
+   padding-bottom: 30px;
+   border-bottom: 2px solid #111111;
+   width: 0;
+   position: absolute;
+   left: 0;
+   transition: 1s ease;
+}
+
+.pa-number-column-two:hover .pa-number-two-border:after {
+   width: 100%;
+}
+
+
+/*sliding border color*/
+
+.pa-number-column-three:hover .pa-number-three-border {
+   position: relative;
+}
+
+.pa-number-column-three .pa-number-three-border:after {
+   content: '';
+   display: block;
+   padding-bottom: 30px;
+   border-bottom: 2px solid #111111;
+   width: 0;
+   position: absolute;
+   left: 0;
+   transition: 1s ease;
+}
+
+.pa-number-column-three:hover .pa-number-three-border:after {
+   width: 100%;
+}
+
+
+/*BACK TO TOP BUTTON
+-----------------------------------------------------------------------*/
+
+
+/*Change background color of back-to-top button*/
+
+.et_pb_scroll_top.et-pb-icon {
+   background: #db0000;
+}
+
+
+/*This section changes the shape to a square and moves the button in from the edge of the screen*/
+
+.et_pb_scroll_top.et-pb-icon {
+   padding: 8px;
+   border-radius: 0px;
+   right: 20px;
+   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+   transition: all 0.3s ease 0s;
+   cursor: pointer;
+   outline: none;
+}
+
+.et_pb_scroll_top.et-pb-icon:hover {
+   background-color: #444444;
+   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+   color: #db0000;
+   transform: translateY(-3px);
+}
+
+
+/*PERSON MODULE
+-----------------------------------------------------------------------*/
+
+
+/*person image original scale size*/
+
+.pa-person img {
+   margin: 30px auto;
+   max-width: 200px;
+   transition: all .5s ease;
+   transform: scale(1.0);
+   transform-origin: bottom;
+}
+
+
+/*scale the image down on hover*/
+
+.pa-person:hover img {
+   transform: scale(0.95) !important;
+   transition: all 500ms cubic-bezier(0.170, 0.690, 0.470, 0.995);
+}
+
+
+/*image smooth transition*/
+
+.pa-person .et_pb_team_member_description img {
+   transition: all 0.5s;
+}
+
+.pa-person .et_pb_member_social_links {
+   margin-left: 10px;
+}
+
+
+/*line below person position*/
+
+.pa-person .et_pb_member_position:after {
+   display: table;
+   content: "";
+   border-top: 2px solid #db0000;
+   width: 60px;
+   margin: 17px 0px 14px;
+   transition: all 0.3s ease-in-out;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+
+/*make line below person position fullwidth on hover*/
+
+.pa-person:hover .et_pb_member_position:after {
+   width: 100px;
+}
+
+
+/*SERVICES SIDEBAR STYLING
+---------------------------------------------------------------*/
+
+
+/*current page in sidebar menu*/
+
+.pa-services-sidebar .et_pb_widget li.current-menu-item a {
+   color: #ffffff!important;
+   background: #111111;
+}
+
+
+/*menu links styling*/
+
+.pa-services-sidebar .et_pb_widget li a {
+   background: #ffffff;
+   padding: 18px 24px;
+   display: block;
+   border-radius: 0px;
+   transition: all 0.3s ease;
+}
+
+
+/*menu links on hover*/
+
+.pa-services-sidebar .et_pb_widget li a:hover {
+   color: #ffffff!important;
+   background: #111111;
+   display: block;
+   transition: all 0.3s ease;
+}
+
+
+/*remove bottom margin on last link*/
+
+.pa-services-sidebar .et_pb_widget:last-child {
+   margin-bottom: 0;
+}
+
+
+/*BLOG POST PAGINATION USING WP-PAGENAVI PLUGIN
+---------------------------------------------------------------*/
+
+
+/*styles the wp-pagenavi pagination links*/
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+   padding: 0.4em 0.8em !important;
+   font-size: 1.5em !important;
+   color: #111111;
+   line-height: 1.5em;
+   background: #eeeeee;
+   transition: all .5s;
+   border-radius: 0px;
+   font-weight: bold!important;
+   ;
+}
+
+
+/*styles the wp-pagenavi current page number*/
+
+.wp-pagenavi span.current {
+   color: #ffffff !important;
+   background: #db0000 !important;
+   border-radius: 0px;
+}
+
+
+/*styles the wp-pagenavi pagination links on hover*/
+
+.wp-pagenavi a:hover {
+   color: #ffffff !important;
+   background: #db0000 !important;
+}
+
+
+/*styles the wp-pagenavi pages text*/
+
+.wp-pagenavi .pages {
+   background: none;
+}
+
+.wp-pagenavi {
+   border-top: none;
+   text-align: center;
+}
+
+
+/*SIDEBAR STYLING
+---------------------------------------------------------------*/
+
+
+/*line to left of widghet headings*/
+
+@media (max-width: 980px) {
+   .pa-widget-subhead-left h4,
+   h4.widgettitle {
+      margin-top: 30px;
+   }
+}
+
+.pa-widget-subhead-left h4:before,
+h4.widgettitle:before {
+   content: '';
+   display: block;
+   position: absolute;
+   top: 30%;
+   left: 0px;
+   width: 50px;
+   border-bottom: 2px solid #db0000;
+   transition: all 0.5s ease-in-out;
+}
+
+
+/*move widthet title to the right to make room for line*/
+
+.pa-widget-subhead-left h4,
+h4.widgettitle {
+   padding-left: 70px!important;
+   margin-bottom: 20px!important;
+   position: relative;
+   transition: all 0.5s ease-in-out;
+}
+
+
+/*recent post styling*/
+
+.widget_recent_entries li a {
+   display: block;
+   margin-bottom: 0px;
+}
+
+
+/*recent posts styling*/
+
+.et_pb_widget.widget_recent_entries li {
+   color: #db0000;
+   font-style: normal;
+   letter-spacing: 0;
+   margin: 0 !important;
+   padding: 10px 0;
+   position: relative;
+   text-transform: capitalize;
+}
+
+
+/*add border to recent posts*/
+
+.et_pb_widget.widget_recent_entries li:not(:last-child) {
+   border-bottom: 2px solid #f4f4f4;
+}
+
+
+/*recent posts on hover*/
+
+.et_pb_widget.widget_recent_entries ul li:hover a {
+   color: #db0000!important;
+   transition: all 0.3s ease-in-out;
+}
+
+
+/*recent posts hover transition*/
+
+.pa-sidebar .et_pb_widget.widget_recent_entries ul li a {
+   transition: all 0.3s ease-in-out;
+}
+
+
+/*recent post date styling*/
+
+.widget_recent_entries span.post-date {
+   font-size: 16px;
+   display: inline-block;
+}
+
+
+/*categories styling*/
+
+.et_pb_widget.widget_categories a {
+   display: inline-block;
+   color: #ffffff!important;
+   background-color: #111111;
+   font-size: 18px!important;
+   padding: 8px 14px;
+   margin: -1px 0px;
+   transition: all 0.3s ease-in-out;
+}
+
+
+/*make categories in an array like the tabs*/
+
+li.cat-item {
+   display: inline-block;
+   margin: 0px 1px;
+}
+
+
+/*tag cloud styling*/
+
+.tagcloud a {
+   color: #ffffff!important;
+   font-size: 18px!important;
+   background-color: #111111;
+   padding: 8px 14px;
+   margin: 4px 1px;
+   text-transform: capitalize;
+   border-radius: 0px;
+}
+
+
+/*category and tag hover colors*/
+
+.tagcloud a:hover,
+.cat-item a:hover {
+   background: #db0000!important;
+   color: #ffffff!important;
+}
+
+
+/*reduce space under widgets*/
+
+.pa-sidebar .et_pb_widget {
+   margin-bottom: 10%;
+}
+
+
+/*FILTERABLE PORTFOLIO
+-----------------------------------------------------------------------*/
+
+
+/*portfolio filter border*/
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a {
+   border: 2px solid #db0000;
+}
+
+
+/*active portfolio filter tab*/
+
+.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active {
+   background: #db0000;
+   color: #ffffff;
+}
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul,
+.et_pb_gallery .et_pb_gallery_pagination ul {
+   text-align: center;
+}
+
+
+/*style the pagination links*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a,
+.et_pb_gallery .et_pb_gallery_pagination ul li a {
+   padding: 1em 1.5em;
+   background: #db0000;
+   border: 2px solid #db0000;
+   color: #ffffff;
+}
+
+
+/*style the pagination links on hover*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a:hover,
+.et_pb_gallery .et_pb_gallery_pagination ul li a.hover {
+   border-color: #db0000;
+   background: #db0000;
+}
+
+
+/*style the active pagination link*/
+
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,
+.et_pb_gallery .et_pb_gallery_pagination ul li a.active {
+   background: #111111;
+   color: #ffffff;
+   border-color: #111111;
+}
+
+
+/*fix space below project pages*/
+
+.single .et_pb_post {
+   margin-bottom: 0;
+}
